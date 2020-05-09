@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d07a1ab4-cb45-468f-acca-5788e7ebc8f6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="C:\Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1bZaF72rbPf8KOCmRSksTnwGbPO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RunManager" selected="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)">
+    <configuration name="Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-sensitive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/lujiahaoo/go-sensitive" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_newSensitiveNode$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-sensitive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/lujiahaoo/go-sensitive" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^Test_newSensitiveNode$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)" />
+        <item itemvalue="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d07a1ab4-cb45-468f-acca-5788e7ebc8f6" name="Default Changelist" comment="" />
+      <created>1588841962945</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588841962945</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://goproxy.cn,direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588995357065">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
+    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588995357065">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
+    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588995357065">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
+    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588995357065">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1588993611490">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="302" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588993611490" />
+    <state width="1493" height="302" key="GridCell.Tab.1.center" timestamp="1588993611489">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="302" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1588993611489" />
+    <state width="1493" height="302" key="GridCell.Tab.1.left" timestamp="1588993611489">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="302" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1588993611489" />
+    <state width="1493" height="302" key="GridCell.Tab.1.right" timestamp="1588993611489">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588993611489" />
+    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588985699502">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1588985699502" />
+  </component>
+</project>
