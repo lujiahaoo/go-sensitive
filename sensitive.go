@@ -1,27 +1,71 @@
 package go_sensitive
 
 import (
+	"bufio"
+	"io/ioutil"
+	"os"
+	"path/filepath"
 	"strings"
 	"sync"
 )
-
-type MATCHTYPE int
 
 const (
 	INVALID_WORDS = " ,~,!,@,#,$,%,^,&,*,(,),_,-,+,=,?,<,>,.,—,，,。,/,\\,|,《,》,？,;,:,：,',‘,；,“,！,。,；,：,’,{,},【,】,[,],、"
 	SENSITIVE_CHILDRED_SIZE = 128
 
+	LEXICON_PATH = "./lexicon" //todo:根据项目文件结构来修改该词库目录路径
+)
+
+//匹配程度
+type MATCHTYPE int
+
+const (
 	SINGLE MATCHTYPE = iota
 	ALL
 )
 
 var InvalidWords = make(map[string]interface{})
+var SensitiveWords = make([]string, 20000)
+var util  *DFAUtil
 
-func init() {
-	words := strings.Split(INVALID_WORDS, ",")
-	for _, v := range words {
+func Setup() {
+	//加载无效词汇
+	inValidArr := strings.Split(INVALID_WORDS, ",")
+	for _, v := range inValidArr {
 		InvalidWords[v] = nil
 	}
+
+	//加载敏感词文件
+	var fileList []string
+	dir, err := ioutil.ReadDir(LEXICON_PATH)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, fi := range dir {
+		if fi.IsDir() {
+			continue
+		} else {
+			fileList = append(fileList, filepath.Join(LEXICON_PATH, fi.Name()))
+		}
+	}
+
+	if len(fileList) == 0 {
+		panic("请添加敏感词文件")
+	}
+
+	for _, fileName := range fileList {
+		r, _ := os.Open(fileName)
+		defer r.Close()
+
+		s := bufio.NewScanner(r)
+		for s.Scan() {
+			SensitiveWords = append(SensitiveWords, s.Text())
+		}
+	}
+
+	//装填敏感词
+	util = newDFAUtil(SensitiveWords)
 }
 
 type sensitiveNode struct {
@@ -30,6 +74,7 @@ type sensitiveNode struct {
 	children map[rune]*sensitiveNode
 }
 
+//初始化Trie树
 func newSensitiveNode() *sensitiveNode {
 	return &sensitiveNode{
 		isEnd:    false,
@@ -37,7 +82,7 @@ func newSensitiveNode() *sensitiveNode {
 	}
 }
 
-type DfaUtil struct {
+type DFAUtil struct {
 	root *sensitiveNode
 
 	mu sync.Mutex
@@ -55,9 +100,8 @@ func newMatchIndex(start, end int) *matchIndex {
 	}
 }
 
-//初始化Trie树
-func newDfaUtil(wordList []string) *DfaUtil {
-	dfaUtil := &DfaUtil{
+func newDFAUtil(wordList []string) *DFAUtil {
+	dfaUtil := &DFAUtil{
 		root: newSensitiveNode(),
 	}
 
@@ -73,7 +117,7 @@ func newDfaUtil(wordList []string) *DfaUtil {
 }
 
 //添加敏感词汇
-func (dfaUtil *DfaUtil) addWord(words []rune) {
+func (dfaUtil *DFAUtil) addWord(words []rune) {
 	dfaUtil.mu.Lock()
 	defer dfaUtil.mu.Unlock()
 
@@ -96,7 +140,7 @@ func (dfaUtil *DfaUtil) addWord(words []rune) {
 }
 
 //查看是否存在敏感词
-func (dfaUtil *DfaUtil) contains(txt string) bool {
+func (dfaUtil *DFAUtil) contains(txt string) bool {
 	var flag = false
 	words := []rune(txt)
 	currNode := dfaUtil.root
@@ -110,7 +154,7 @@ func (dfaUtil *DfaUtil) contains(txt string) bool {
 		}
 
 		if targetNode, exists := currNode.children[words[i]]; exists {
-			//记录敏感词第一个文字的位置
+			//记录敏感词第一个字的位置
 			tag++
 			if tag == 0 {
 				start = i
@@ -124,7 +168,7 @@ func (dfaUtil *DfaUtil) contains(txt string) bool {
 		} else {
 			//敏感词不全匹配，终止此敏感词查找。从开始位置的第二个文字继续判断
 			if start != -1 {
-				i = start + 1
+				i = start
 			}
 			//重置
 			currNode = dfaUtil.root
@@ -142,7 +186,7 @@ func (dfaUtil *DfaUtil) contains(txt string) bool {
 }
 
 //查找敏感词索引
-func (dfaUtil *DfaUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchIndexList []*matchIndex) {
+func (dfaUtil *DFAUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchIndexList []*matchIndex) {
 	words := []rune(txt)
 	currNode := dfaUtil.root
 	start := -1
@@ -173,7 +217,7 @@ func (dfaUtil *DfaUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchI
 		} else {
 			//敏感词不全匹配，终止此敏感词查找。从开始位置的第二个文字继续判断
 			if start != -1 {
-				i = start + 1
+				i = start
 			}
 			//重置
 			currNode = dfaUtil.root
@@ -186,10 +230,10 @@ func (dfaUtil *DfaUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchI
 }
 
 //替换敏感词
-func (dfaUtil *DfaUtil) cover(txt string, mask rune) string {
+func (dfaUtil *DFAUtil) cover(txt string, mask rune) (string, bool) {
 	matchIndexList := dfaUtil.searchSensitive(txt, ALL)
 	if len(matchIndexList) == 0 {
-		return ""
+		return txt, false
 	}
 
 	txtRune := []rune(txt)
@@ -199,7 +243,7 @@ func (dfaUtil *DfaUtil) cover(txt string, mask rune) string {
 		}
 	}
 
-	return string(txtRune)
+	return string(txtRune), true
 }
 
 

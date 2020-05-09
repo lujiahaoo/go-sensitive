@@ -35,8 +35,19 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
   </component>
-  <component name="RunManager" selected="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)">
-    <configuration name="Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestDFAUtil_Cover in github.com/lujiahaoo/go-sensitive">
+    <configuration name="BenchmarkDFAUtil_Contains in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-sensitive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gobench" />
+      <kind value="PACKAGE" />
+      <package value="github.com/lujiahaoo/go-sensitive" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^BenchmarkDFAUtil_Contains$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDFAUtil_Contains in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-sensitive" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -44,10 +55,32 @@
       <package value="github.com/lujiahaoo/go-sensitive" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^Test_newSensitiveNode$" />
+      <pattern value="^TestDFAUtil_Contains$" />
       <method v="2" />
     </configuration>
-    <configuration name="Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDFAUtil_Cover in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-sensitive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/lujiahaoo/go-sensitive" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDFAUtil_Cover$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDFAUtil_SearchSensitive in github.com/lujiahaoo/go-sensitive" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="go-sensitive" />
+      <working_directory value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="github.com/lujiahaoo/go-sensitive" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDFAUtil_SearchSensitive$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="go-sensitive" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gotest" />
@@ -60,8 +93,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestDFAUtil_Cover in github.com/lujiahaoo/go-sensitive" />
+        <item itemvalue="Go Test.TestDFAUtil_SearchSensitive in github.com/lujiahaoo/go-sensitive" />
+        <item itemvalue="Go Test.TestDFAUtil_Contains in github.com/lujiahaoo/go-sensitive" />
         <item itemvalue="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive (1)" />
-        <item itemvalue="Go Test.Test_newSensitiveNode in github.com/lujiahaoo/go-sensitive" />
+        <item itemvalue="Go Test.BenchmarkDFAUtil_Contains in github.com/lujiahaoo/go-sensitive" />
       </list>
     </recent_temporary>
   </component>
@@ -83,22 +119,22 @@
     <proxy>https://goproxy.cn,direct</proxy>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom" timestamp="1588995357065">
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom" timestamp="1589033256925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
-    <state width="1493" height="213" key="GridCell.Tab.0.center" timestamp="1588995357065">
+    <state width="1493" height="209" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1589033256925" />
+    <state width="1493" height="209" key="GridCell.Tab.0.center" timestamp="1589033256925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
-    <state width="1493" height="213" key="GridCell.Tab.0.left" timestamp="1588995357065">
+    <state width="1493" height="209" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1589033256925" />
+    <state width="1493" height="209" key="GridCell.Tab.0.left" timestamp="1589033256925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
-    <state width="1493" height="213" key="GridCell.Tab.0.right" timestamp="1588995357065">
+    <state width="1493" height="209" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1589033256925" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right" timestamp="1589033256925">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="213" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1588995357065" />
+    <state width="1493" height="209" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1589033256925" />
     <state width="1493" height="302" key="GridCell.Tab.1.bottom" timestamp="1588993611490">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -115,9 +151,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state width="1493" height="302" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1588993611489" />
-    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588985699502">
+    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589005617235">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1588985699502" />
+    <state x="562" y="334" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834@0.0.1536.834" timestamp="1589005617235" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1589021216521">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1589021216521" />
   </component>
 </project>
