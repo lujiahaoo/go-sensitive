@@ -26,7 +26,7 @@ const (
 
 var InvalidWords = make(map[string]interface{})
 var SensitiveWords = make([]string, 20000)
-var util  *DFAUtil
+var Util  *DFAUtil
 
 func Setup() {
 	//加载无效词汇
@@ -65,7 +65,20 @@ func Setup() {
 	}
 
 	//装填敏感词
-	util = newDFAUtil(SensitiveWords)
+	dfaUtil := &DFAUtil{
+		root: newSensitiveNode(),
+	}
+
+	for _, word := range SensitiveWords {
+		wordRuneList := []rune(word)
+		//是词语才加入
+		if len(wordRuneList) > 1 {
+			dfaUtil.addWord(wordRuneList)
+		}
+	}
+
+
+	Util = dfaUtil
 }
 
 type sensitiveNode struct {
@@ -100,24 +113,12 @@ func newMatchIndex(start, end int) *matchIndex {
 	}
 }
 
-func newDFAUtil(wordList []string) *DFAUtil {
-	dfaUtil := &DFAUtil{
-		root: newSensitiveNode(),
-	}
-
-	for _, word := range wordList {
-		wordRuneList := []rune(word)
-		//是词语才加入
-		if len(wordRuneList) > 1 {
-			dfaUtil.addWord(wordRuneList)
-		}
-	}
-
+func NewDFAUtil(wordList []string) *DFAUtil {
 	return dfaUtil
 }
 
 //添加敏感词汇
-func (dfaUtil *DFAUtil) addWord(words []rune) {
+func (dfaUtil *DFAUtil) AddWord(words []rune) {
 	dfaUtil.mu.Lock()
 	defer dfaUtil.mu.Unlock()
 
@@ -140,7 +141,7 @@ func (dfaUtil *DFAUtil) addWord(words []rune) {
 }
 
 //查看是否存在敏感词
-func (dfaUtil *DFAUtil) contains(txt string) bool {
+func (dfaUtil *DFAUtil) Contains(txt string) bool {
 	var flag = false
 	words := []rune(txt)
 	currNode := dfaUtil.root
@@ -186,7 +187,7 @@ func (dfaUtil *DFAUtil) contains(txt string) bool {
 }
 
 //查找敏感词索引
-func (dfaUtil *DFAUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchIndexList []*matchIndex) {
+func (dfaUtil *DFAUtil) SearchSensitive(txt string, matchType MATCHTYPE) (matchIndexList []*matchIndex) {
 	words := []rune(txt)
 	currNode := dfaUtil.root
 	start := -1
@@ -230,7 +231,7 @@ func (dfaUtil *DFAUtil) searchSensitive(txt string, matchType MATCHTYPE) (matchI
 }
 
 //替换敏感词
-func (dfaUtil *DFAUtil) cover(txt string, mask rune) (string, bool) {
+func (dfaUtil *DFAUtil) Cover(txt string, mask rune) (string, bool) {
 	matchIndexList := dfaUtil.searchSensitive(txt, ALL)
 	if len(matchIndexList) == 0 {
 		return txt, false
