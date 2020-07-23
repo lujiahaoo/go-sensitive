@@ -169,7 +169,7 @@ func (dfaUtil *DFAUtil) Contains(txt string) bool {
 		} else {
 			//敏感词不全匹配，终止此敏感词查找。从开始位置的第二个文字继续判断
 			if start != -1 {
-				i = start
+				i = start + 1
 			}
 			//重置
 			currNode = dfaUtil.root
@@ -218,7 +218,7 @@ func (dfaUtil *DFAUtil) SearchSensitive(txt string, matchType MATCHTYPE) (matchI
 		} else {
 			//敏感词不全匹配，终止此敏感词查找。从开始位置的第二个文字继续判断
 			if start != -1 {
-				i = start
+				i = start + 1
 			}
 			//重置
 			currNode = dfaUtil.root
